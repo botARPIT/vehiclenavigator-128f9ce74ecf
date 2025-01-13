@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <TextView
+            android:id="@+id/vehicle_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="WB15CM0934"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A.D Engineering"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="2dp"
+        app:cardElevation="6dp"
+    app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <!-- Gate Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:layout_gravity="center_horizontal"
+                android:onClick="toggleGateDetails">
+
+                <TextView
+                    android:id="@+id/gate_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/gate_label"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/gate_arrow_icon"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:src="@drawable/baseline_arrow_drop_down_24" />-->
+            </LinearLayout>
+
+            <!-- Gate Details -->
+            <LinearLayout
+                android:id="@+id/gate_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!--    Gate Entry Time -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/gate_entry_time_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:hint="@string/gate_entry_time"
+                    android:inputType="datetime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gate_entry_time_edit_text"
+                        android:inputType="datetime"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <CheckBox
+                    android:id="@+id/tools_checked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/cardview_shadow_start_color"
+                    android:text="Tools checked (at 11:30 AM)" />
+
+                <!--    Gate Exit Time -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/gate_exit_time_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/gate_exit_time"
+                    android:inputType="datetime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gate_exit_time_edit_text"
+                        android:inputType="datetime"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/save_gate_details_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/savedetails"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="2dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Kanta Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="toggleKantaSection">
+
+                <TextView
+                    android:id="@+id/kanta_section_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kanta_label"
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <!-- Kanta Details -->
+            <LinearLayout
+                android:id="@+id/kanta_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:paddingTop="8dp">
+
+
+
+                <!--    Kanta Weight  -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kanta_weight_input_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Weight (kg)"
+                    android:inputType="numberDecimal"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kanta_weight_input_edit_text"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <!--    Kanta Time -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kanta_time_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/time_label"
+                    android:inputType="time"
+                    android:layout_marginTop="16dp"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kanta_time_edit_text"
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kanta Type -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kanta_type_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="Type"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/kanta_type_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <Button
+                    android:id="@+id/save_kanta_details_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/savedetails"
+                    />
+                <!-- Kanta List -->
+                <ListView
+                    android:id="@+id/lv_kanta_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:layout_marginTop="16dp"
+                    android:divider="@android:color/darker_gray"
+                    android:dividerHeight="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+    <!-- Loading Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="6dp"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="2dp"
+        app:cardCornerRadius="8dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Loading Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="toggleLoadingDetails">
+
+                <TextView
+                    android:id="@+id/loading_section_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading_label"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/loading_arrow_icon"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/baseline_arrow_drop_down_24" />-->
+            </LinearLayout>
+
+            <!-- Loading Details -->
+            <LinearLayout
+                android:id="@+id/loading_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:visibility="visible">
+
+                <!-- Loading Point Dropdown -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loading_point_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="@string/loading_point_label"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/loading_point_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <!-- Start Time -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loading_start_time_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/start_label"
+                    android:inputType="time"
+                    android:layout_marginTop="16dp"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/loading_start_time_edit_text"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <!--  Loading End Time -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loading_end_time_tl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/end_label"
+                    android:inputType="time"
+                    android:layout_marginTop="16dp"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/loading_end_time_edit_text"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <Button
+                    android:id="@+id/save_Loading_details_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/savedetails"
+                    />
+
+
+
+
+                <!-- Loading List -->
+                <ListView
+                    android:id="@+id/loading_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:divider="@android:color/darker_gray"
+                    android:dividerHeight="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+</LinearLayout>
+</ScrollView>

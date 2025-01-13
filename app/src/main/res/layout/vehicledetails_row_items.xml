@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+  android:id="@id/main"
+android:layout_height="wrap_content">
+
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/vehicle_detail_card"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="@color/white"
+    app:cardElevation="6dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+
+    app:layout_constraintTop_toTopOf="parent"
+    app:strokeWidth="2dp">
+    <LinearLayout
+        android:id="@+id/vd_parent_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00236191"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Vehicle Number -->
+                <TextView
+                    android:id="@+id/tv_vehicle_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="WB01DE8376"
+                    android:textColor="@color/hyperblue"
+
+                        android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Status Badge -->
+                <TextView
+                    android:id="@+id/tv_status_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_weight="2"
+                    android:textAllCaps="true"
+                    android:background="@drawable/status_badge_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="ON HOLD"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </TableRow>
+
+        </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/horizontal_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00236191"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+     >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:layout_weight="1"
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Gate In -->
+                <TextView
+                    android:id="@+id/tv_gate_in_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gate in"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                >
+
+            <!-- Status Indicators -->
+                <ImageView
+                    android:id="@+id/iv_gate_in_status"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/status_circle_green"
+                    app:layout_constraintStart_toEndOf="@id/tv_gate_in_time"
+                    app:layout_constraintTop_toTopOf="@id/tv_gate_in_time" />
+
+
+                    />
+
+
+
+            </TableRow>
+
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_gate_in_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="10:30 AM"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_gate_in_label" />
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_weight="1"
+
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Kanta -->
+                <TextView
+                    android:id="@+id/tv_kanta_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="Kanta"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                     />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                >
+
+                <!-- Status Indicators -->
+                <ImageView
+                    android:id="@+id/iv_kanta_status"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/status_circle_red" />
+
+            </TableRow>
+
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_kanta_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="Not started"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_kanta_label" />
+
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_weight="1"
+
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Loading -->
+                <TextView
+                    android:layout_weight="1"
+
+                    android:id="@+id/tv_loading_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+
+                     />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+
+
+                >
+
+                <!-- Status Indicators -->
+                <ImageView
+
+                    android:id="@+id/iv_loading_status"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/status_circle_red" />
+
+
+            </TableRow>
+
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_loading_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Not started"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loading_label" />
+
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+    <!--            </LinearLayout>-->
+
+</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    tools:context=".VehicleDetailsActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    >
+
+
+    <TextView
+        android:id="@+id/label_vehicle_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+
+        android:ems="10"
+        android:text="Enter Vehicle Details"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+<!--    Vehicle no -->
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/vehicleno_tl"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:hint="@string/vehicleno_textfield"
+    android:inputType="textPersonName"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/label_vehicle_details"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vehicleno_edit_text"/>
+</com.google.android.material.textfield.TextInputLayout>
+
+<!--    Driver Name -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/drivername_tl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/drivername_textfield"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicleno_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/drivername_edit_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--  Reporting Time at Gate -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/report_time_tl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/report_time_textfield"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drivername_tl"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/report_time_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--  Customer Name -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/customer_name_tl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/customername_textfield"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_time_tl"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/customer_name_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <!-- Vehicle Type -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/vehicle_type_tl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/vehicletype_textfield"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customer_name_tl"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/vehicle_type_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--  Transporter Name -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transportername_tl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/transportername_textfield"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_type_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/transportername_edit_text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--<ImageView-->
+<!--    android:id="@+id/imageView2"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginTop="96dp"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent" />-->
+
+<Button
+    android:id="@+id/btnlogin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="64dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginEnd="64dp"
+    android:text="@string/savedetails"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/transportername_tl" />
+
+<!--<CheckBox-->
+<!--    android:id="@+id/showpass"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="32dp"-->
+<!--    android:layout_marginTop="16dp"-->
+<!--    android:text="Show password"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/transportername_tl" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
